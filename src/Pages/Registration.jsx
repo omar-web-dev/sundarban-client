@@ -97,7 +97,62 @@ const Registration = () => {
     return (
         <div className='py-20 flex justify-center'>
 
-            
+            <div className='w-96 p-7 border'>
+                <h2 className='text-3xl  font-semibold font-[Lexend Deca] text-orange-500'>Create account</h2>
+                <form onSubmit={handleSubmit(handleSignUp)}>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="text-gray-600 label-text">Your Email</span>
+                        </label>
+                        <input type="email" {...register("email", {
+                        })} className="input input-sm  focus:outline-1 focus:outline-dashed focus:outline-orange-500 input-bordered w-full max-w-xs" />
+                        {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
+                    </div>
+
+                    {/* <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="text-gray-600 label-text">Image</span></label>
+                        <input type="file" {...register("image", {
+                        })} className="input input-bordered w-full max-w-xs" />
+                        {errors.image && <p className='text-red-500'>{errors.image.message}</p>}
+                    </div> */}
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="text-gray-600 label-text">Password</span></label>
+                        <input type="password" {...register("password", {
+                            required: "Password is required",
+                            minLength: { value: 8, message: "Password must be 8 characters long" },
+                            pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
+                        })} className="input input-sm  focus:outline-1 focus:outline-dashed focus:outline-orange-500 input-bordered w-full max-w-xs" />
+                        {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                    </div>
+                    {/* <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="text-gray-600 label-text">Re-enter Password</span></label>
+                        <input type="password" {...register("rePassword", {
+                            required: "Password doesn't much",
+                            minLength: { value: 8, message: "Password must be 8 characters long" },
+                            pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
+                        })} className="input input-sm  focus:outline-1 focus:outline-dashed focus:outline-orange-500 input-bordered w-full max-w-xs" />
+                        {errors.rePassword && <p className='text-red-500'>{errors.rePassword.message}</p>}
+                    </div> */}
+                    <div className="flex justify-between items-center my-1 max-w-xs">
+                        <div className='flex'>
+                            <input name='checkCondition' type="checkbox"
+                                {...register("checkCondition", {
+                                })}
+                                className=" bg-[#224957]" />
+                            <label className="label "> <span className=" text-gray-600 label-text">Accept our Tram & Condition</span></label>
+                        </div>
+                        <p className='text-blue-600 hover:text-orange-600'>see now</p>
+                    </div>
+                    <input className={`btn btn-sm bg-gradient-to-b from-cyan-500 to-blue-500 border-none rounded-md  w-full `}
+                        value="Continue" type="submit" />
+                    {error && <p className='text-red-600'>{error}</p>}
+                </form>
+                <p className='text-sm mt-1 text-gray-600'>Already have an account <Link className=' text-blue-600 hover:text-orange-600' to="/login">Please Login</Link></p>
+                <div className="divider text-gray-600">OR</div>
+                <button onClick={handelGoogleLogIn} className='btn btn-sm rounded-md btn-outline  w-full bg-orange-500 border-none text-gray-100 '>CONTINUE WITH GOOGLE</button>
+
+            </div>
         </div>
     );
 };
