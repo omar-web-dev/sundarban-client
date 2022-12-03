@@ -37,7 +37,7 @@ const BookModel = ({ booking, toggle, setToggle }) => {
             sellerLocation
         };
 
-        fetch('https://apens-home.vercel.app/booking', {
+        fetch('http://localhost:5000//booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -36,7 +36,7 @@ const Login = () => {
     const saveUser = (name, email, userStatus, password) => {
         const user = { name, email, userStatus, password };
 
-        fetch('https://apens-home.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

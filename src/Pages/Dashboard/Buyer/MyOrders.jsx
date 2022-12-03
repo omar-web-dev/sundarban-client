@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`https://apens-home.vercel.app/booking?userEmail=${user?.email}`)
+        fetch(`http://localhost:5000/booking?userEmail=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user])

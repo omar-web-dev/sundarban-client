@@ -13,7 +13,7 @@ const Buyers = () => {
         queryKey: ['buyer'],
         queryFn: async () => {
             try {
-                const res = await fetch('https://apens-home.vercel.app/rule?userStatus=buyer', {
+                const res = await fetch('http://localhost:5000/rule?userStatus=buyer', {
 
                 });
                 const data = await res.json();

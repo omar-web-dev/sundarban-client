@@ -18,7 +18,7 @@ const useAdmin = realUser => {
             if(realUser?.userStatus === 'buyer'){
                 setIsBuyer(true)
             }
-            fetch(`https://apens-home.vercel.app/users/admin/email?email=${realUser?.email}`)
+            fetch(`http://localhost:5000/users/admin/email?email=${realUser?.email}`)
                 .then(res => res.json())
                 .then(data => {
                 })

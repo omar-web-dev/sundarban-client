@@ -7,7 +7,7 @@ const DashboardNavbar = () => {
     const { user, userSignOut } = useContext(AuthContext)
     const [toggle, setToggle] = useState(false)
     useEffect(()=>{
-        fetch(`https://apens-home.vercel.app/users-email?email=${user?.email}`)
+        fetch(`http://localhost:5000/users-email?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {})
     },[user?.email])

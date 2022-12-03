@@ -19,7 +19,7 @@ const MyProductCard = ({ product, id, sl }) => {
         }
 
 
-        fetch('https://apens-home.vercel.app/product-status', {
+        fetch('http://localhost:5000/product-status', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ console.log(status)
 const handelDeleteProduct = () => {
     const confirm = window.confirm('Are you sure delete this Product')
     if (confirm) {
-        fetch(`https://apens-home.vercel.app/add-product/${id}`, {
+        fetch(`http://localhost:5000/add-product/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

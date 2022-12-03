@@ -16,7 +16,7 @@ const AddProduct = () => {
 
 
     useEffect(() => {
-        fetch(`https://apens-home.vercel.app/categorize`)
+        fetch(`http://localhost:5000/categorize`)
             .then(res => res.json())
             .then(data => setCategorize(data))
     }, [])
@@ -65,7 +65,7 @@ const AddProduct = () => {
     const saveUser = (productTitle, price, oldPrice, usedYear, condition, category, city, state, zip, phone, productImage) => {
         const user = { productTitle, price, oldPrice, usedYear, condition, city, state, zip, email: sellerEmail, name: sellerName, category, phone, productImage, currentDate, productStatus };
 
-        fetch('https://apens-home.vercel.app/add-product', {
+        fetch('http://localhost:5000/add-product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

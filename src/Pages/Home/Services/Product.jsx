@@ -11,13 +11,13 @@ const Product = () => {
     const [products, setProducts] = useState([])
     const [categorize, setCategorize] = useState([])
     useEffect(() => {
-        fetch(`https://apens-home.vercel.app/categorize`)
+        fetch(`http://localhost:5000/categorize`)
             .then(res => res.json())
             .then(data => setCategorize(data))
     }, [])
 
     useEffect(() => {
-        fetch(`https://apens-home.vercel.app/product`)
+        fetch(`http://localhost:5000/product`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "category/:category",
-        loader : ({params}) => fetch(`https://apens-home.vercel.app/product/category?category=${params.category}`),
+        loader : ({params}) => fetch(`http://localhost:5000/product/category?category=${params.category}`),
         element: <ProductCategory />,
       },
 

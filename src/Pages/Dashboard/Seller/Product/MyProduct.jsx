@@ -13,7 +13,7 @@ const MyProduct = () => {
         queryKey: ['products'],
         queryFn: async () => {
             try {
-                const res = await fetch(`https://apens-home.vercel.app/my-product?email=${user?.email}`)
+                const res = await fetch(`http://localhost:5000/my-product?email=${user?.email}`)
                 const data = await res.json();
                 return data;
             }

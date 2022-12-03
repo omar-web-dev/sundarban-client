@@ -6,7 +6,7 @@ import FooterCategory from './FooterCategory';
 const Footer = () => {
     const [categorize, setCategorize] = useState([])
     useEffect(() => {
-        fetch(`https://apens-home.vercel.app/categorize`)
+        fetch(`http://localhost:5000/categorize`)
             .then(res => res.json())
             .then(data => setCategorize(data))
     }, [])
